@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="confirmBackgroundColorChange()">Change Background Color</button>
+
+    <script>
+        function confirmBackgroundColorChange() {
+            const result = window.confirm("Do you want to change the background color to black?");
+            if (result) {
+                document.body.style.backgroundColor = "black";
+            }
+        }
+    </script>
+
+<button onclick="checkAge()">Check Age</button>
+
+<script>
+    function checkAge() {
+        const userAge = prompt("Please enter your age:");
+        if (userAge !== null && !isNaN(userAge) && parseInt(userAge) < 18) {
+            alert("You are under 18. This content is not suitable for minors.");
+        }
+    }
+</script>
+
+<div id="fullname"></div>
+<script>
+    class User {
+        constructor(name, surname, password) {
+            this.name = name;
+            this.surname = surname;
+            this.password = password;
+        }
+
+        getFullName() {
+            return `${this.name} ${this.surname}`;
+        }
+    }
+    const user = new User("Leyla", "Mammadova", "mypassword");
+    const fullnameElement = document.getElementById("fullname");
+    fullnameElement.textContent = user.getFullName().toUpperCase();
+</script>
+
+    
+</body>
+<script src="./src/app.js"></script>
+</html>
